@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
+import { reducer as reduxForm } from 'redux-form';
 import CarsReducer from './CarsReducer';
 
-const rootReducer = combineReducers({
+export default combineReducers({
   cars: CarsReducer
 });
-
-export default rootReducer;

@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import { fetchCarOfWeek, fetchCars } from '../actions';
+import { fetchCarOfWeek } from '../actions';
 import Card from './Card';
 
 class Home extends Component {
   componentWillMount(){
-    this.props.fetchCars();
     this.props.fetchCarOfWeek();
   }
 
   render() {
-    console.log(this.props.cars);
     const cars = this.props.cars.model; 
     return (
         <div>
@@ -26,4 +24,4 @@ function mapStateToProps(state) {
   return { cars: state.cars };
 }
 
-export default connect(mapStateToProps, { fetchCarOfWeek, fetchCars })(Home);
+export default connect(mapStateToProps, { fetchCarOfWeek })(Home);
