@@ -6,9 +6,8 @@ import _ from 'lodash';
 
 class Search extends Component {
   state = {
-    make : '',
-    makeId: '',
-    model : ''
+    selectedMake : '',
+    selectedModel : ''
   };
   componentWillMount(){
     this.props.fetchCarMakes();
@@ -20,35 +19,34 @@ class Search extends Component {
         [prop]: e.target.value
       });
 
-      if (prop === "make") {
+      if (prop === "selectedMake") {
         this.setState({
-          model: "0"
+          selectedModel: "0"
         });
       }
     };
   }
   onSubmit() {
     let cars = this.props.cars.model;
-    let selectedCar = _.find(cars, {"name": `${this.state.model}`});
+    let selectedCar = _.find(cars, {"name": `${this.state.selectedModel}`});
     this.props.history.push({
       pathname: `/make/model/${selectedCar.id}`,
       carModel: selectedCar
     })
   }
   modelOptionItems(){
-    if(this.state.make === '') return '';
+    if(this.state.selectedMake === '') return '';
     let carModels = this.props.cars.model;
-    let makeId= _.find(this.props.cars.make, {"name": this.state.make}).id;
-    let carModelOptions =  _.filter(carModels, {"makeId": makeId })
+    let makeId= _.find(this.props.cars.make, {"name": this.state.selectedMake}).id;
+    let carModelOptions =  _.filter(carModels, {"makeId": makeId });
 
-    let varModelOptionItems = carModelOptions.map((carModel) =>
+    return(carModelOptions.map((carModel) =>
             <option key={carModel.id} value={carModel.name}>{carModel.name}</option>
-        );
-    return varModelOptionItems;
+        ));
   }
   render() {
-    let carMakes = this.props.cars.make;
-    let carModels = this.props.cars.model;
+    const carMakes = this.props.cars.make;
+    const carModels = this.props.cars.model;
 
     if(typeof(carMakes) === 'undefined' || !carMakes || !carModels) return null;
 
@@ -60,12 +58,12 @@ class Search extends Component {
           <form onSubmit={this.onSubmit.bind(this)}>
             <Select
               label="Manufacturer"
-              onChange={this.onChange("make")}
+              onChange={this.onChange("selectedMake")}
               optionItems={makeOptionItems}
             />
             <Select
               label="Model"
-              onChange={this.onChange("model")}
+              onChange={this.onChange("selectedModel")}
               optionItems={this.modelOptionItems()}
             />
              <button disabled={this.state.model <= 0}>Search</button>
@@ -73,8 +71,8 @@ class Search extends Component {
     );
   }
 }
-function mapStateToProps(state) {
-  return { cars: state.cars };
+function mapStateToProps({ cars }) {
+  return { cars };
 }
 
 export default connect(mapStateToProps, { fetchCarMakes })(Search);

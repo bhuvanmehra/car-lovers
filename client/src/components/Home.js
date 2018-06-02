@@ -20,8 +20,8 @@ class Home extends Component {
       );
   }
 }
-function mapStateToProps(state) {
-  return { cars: state.cars };
+function mapStateToProps({ cars }) {
+  return { cars };
 }
 
 export default connect(mapStateToProps, { fetchCarOfWeek })(Home);

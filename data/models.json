@@ -39,21 +39,21 @@
     "makeId": 30,
     "name": "1",
     "price": 83000,
-    "imageUrl": "http://www.bmw.com.au/content/dam/bmw/common/all-models/1-series/5-door/2015/at-a-glance/design-fw-exterieur-01.jpg/jcr:content/renditions/cq5dam.resized.img.585.low.time1447923462248.jpg"
+    "imageUrl": "https://www.bmw.com.au//bmw/bmw-cars/1-series/2017-5-door/bmw-1-series-5-door-at-a-glance-driving-dynamics-1270x500.jpg"
   },
   {
     "id": 310,
     "makeId": 30,
     "name": "2",
     "price": 125000,
-    "imageUrl": "http://www.bmw.com.au/content/dam/bmw/common/all-models/2-series/coupe/2013/at-a-glance/Exterieur-design-03.jpg/jcr:content/renditions/cq5dam.resized.img.585.low.time1470324214485.jpg"
+    "imageUrl": "https://www.bmw.com.au/website/var/tmp/image-thumbnails/0/8203/thumb__960x540_auto_6d5fb1a38874202f2dd8ab2a98f87b37/bmw-2series-cabrio-ataglance-ts-01_edit.jpeg"
   },
   {
     "id": 320,
     "makeId": 30,
     "name": "3",
     "price": 150000,
-    "imageUrl": "http://www.bmw.com.au/content/dam/bmw/common/all-models/3-series/sedan/2015/at-a-glance/3-series-sedan-design.jpg/jcr:content/renditions/cq5dam.resized.img.585.low.time1447942773188.jpg"
+    "imageUrl": "https://www.bmw.com.au//website/var/tmp/image-thumbnails/0/4119/thumb__960x540/08.jpeg"
   },
   {
     "id": 400,

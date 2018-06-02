@@ -5,7 +5,7 @@ const Card = (props) => {
 
         return(
             <div>
-                <img className="materialboxed" alt={`Model - + $ {props.carModel.name}`} data-caption="Model MX-5" width="650" src={props.carModel.imageUrl} />
+                <img className="materialboxed" alt={props.carModel.name} data-caption="Model MX-5" width="650" src={props.carModel.imageUrl} />
                 <div style={{margin: '1em'}}>
                 <div style={{display: 'inline-block', marginLeft: 10}}>
                     <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>Model - {props.carModel.name}</div>
@@ -17,5 +17,3 @@ const Card = (props) => {
 };
 
 export default Card;
-
-//<img class="materialboxed" data-caption={`Model - + $ {props.carModel.name}`} width="650" src={props.carModel.imageUrl} />
