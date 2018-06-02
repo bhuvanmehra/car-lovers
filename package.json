@@ -1,0 +1,17 @@
+{
+  "name": "car-lovers",
+  "version": "1.0.0",
+  "description": "React using Redux and Express",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run start --prefix client",
+    "server": "nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "bmehra",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3"
+  }
+}
