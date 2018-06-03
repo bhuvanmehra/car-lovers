@@ -5,19 +5,20 @@ import { fetchCarOfWeek } from '../actions';
 import Card from './Card';
 
 class Home extends Component {
-  componentWillMount(){
+  componentWillMount() {
     this.props.fetchCarOfWeek();
   }
 
   render() {
     const cars = this.props.cars.model; 
+    const { carOfTheWeek } = this.props.cars;
     return (
-        <div>
-          <HomeComponent />
-          <Card carModel={_.find(cars, {"id": this.props.cars.carOfTheWeek.modelId})} />
-          <p>{this.props.cars.carOfTheWeek.review}</p>
-        </div>
-      );
+      <div>
+        <HomeComponent />
+        <Card carModel={_.find(cars, {"id": carOfTheWeek.modelId})} />
+        <p>{this.props.cars.carOfTheWeek.review}</p>
+      </div>
+    );
   }
 }
 function mapStateToProps({ cars }) {
@@ -25,7 +26,7 @@ function mapStateToProps({ cars }) {
 }
 
 export const HomeComponent = () => {
-  return <h4 className="home-title">Car Of The Week</h4>;
+  return <h5 className="home-title" style={{ textAlign: 'center' }}>Car Of The Week</h5>;
 };
 
 export default connect(mapStateToProps, { fetchCarOfWeek })(Home);

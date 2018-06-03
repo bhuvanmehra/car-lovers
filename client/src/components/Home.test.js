@@ -11,7 +11,7 @@ Enzyme.configure({ adapter: new ReactSixteenAdapter() });
 describe('Home component testing', function() {
   it('renders welcome message', function() {
     const wrapper = shallow(<HomeComponent />); 
-    const homeTitle = <h4 className='home-title'>Car Of The Week</h4>;
+    const homeTitle = <h5 className='home-title' style={{ textAlign: 'center' }}>Car Of The Week</h5>;
     expect(wrapper.contains(homeTitle)).to.equal(true);
   });
 });
