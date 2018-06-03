@@ -12,7 +12,16 @@ class Search extends Component {
   componentWillMount(){
     this.props.fetchCarMakes();
   }
+  onSubmit() {
+    const cars = this.props.cars.model;
+    const { selectedModel } = this.state;
+    if ( selectedModel === '') return null;
 
+    let selectedCar = _.find(cars, {"name": selectedModel});
+    this.props.history.push({
+      pathname: `/make/model/${selectedCar.id}`,
+    });
+  }
   onChange(prop) {
     return e => {
       this.setState({
@@ -25,17 +34,7 @@ class Search extends Component {
         });
       }
     };
-  }
-  onSubmit() {
-    const cars = this.props.cars.model;
-    const { selectedModel } = this.state;
-    if ( selectedModel === '') return null;
-
-    let selectedCar = _.find(cars, {"name": selectedModel});
-    this.props.history.push({
-      pathname: `/make/model/${selectedCar.id}`,
-    });
-  }
+  } 
   modelOptionItems(){
     const { selectedMake } = this.state;
     
@@ -45,8 +44,7 @@ class Search extends Component {
     let carModelOptions =  _.filter(model, {"makeId": makeId });
 
     return(carModelOptions.map((carModel) => <option key={carModel.id} value={carModel.name}>{carModel.name}</option>));
-  }
-  
+  } 
   render() {
     const carMakes = this.props.cars.make;
     const carModels = this.props.cars.model;
