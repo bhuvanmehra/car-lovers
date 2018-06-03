@@ -13,12 +13,12 @@ const Header = () => {
           </Link>
           <ul className="right">
             <li>
-                <a href="/search">Search</a>
+                <a className="search" href="/search">Search</a>
             </li>
           </ul>
         </div>
       </nav>
     );
-}
+};
 
 export default Header;

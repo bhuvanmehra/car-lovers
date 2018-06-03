@@ -35,10 +35,12 @@ class Search extends Component {
     })
   }
   modelOptionItems(){
-    if(this.state.selectedMake === '') return '';
-    let carModels = this.props.cars.model;
-    let makeId= _.find(this.props.cars.make, {"name": this.state.selectedMake}).id;
-    let carModelOptions =  _.filter(carModels, {"makeId": makeId });
+    const { selectedMake } = this.state;
+    
+    if( selectedMake === '') return '';
+    const { model, make } = this.props.cars;
+    let makeId= _.find(make, {"name": selectedMake}).id;
+    let carModelOptions =  _.filter(model, {"makeId": makeId });
 
     return(carModelOptions.map((carModel) =>
             <option key={carModel.id} value={carModel.name}>{carModel.name}</option>

@@ -6,12 +6,15 @@
   "scripts": {
     "client": "npm run start --prefix client",
     "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "cd client && npm run test && cd .. && mocha server.spec.js"
   },
   "author": "bmehra",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^3.5.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
   }
 }
