@@ -16,7 +16,7 @@ class Home extends Component {
       <div>
         <HomeComponent />
         <Card carModel={_.find(cars, {"id": carOfTheWeek.modelId})} />
-        <p>{this.props.cars.carOfTheWeek.review}</p>
+        <p className="flow-text">{this.props.cars.carOfTheWeek.review}</p>
       </div>
     );
   }
