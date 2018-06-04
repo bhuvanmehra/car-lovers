@@ -3,6 +3,7 @@ An Application to view Cars Catalogs
 
 ### Initial setup
 ```
+npm i -g nodemon
 npm install 
 cd client 
 npm install
