@@ -16,11 +16,6 @@ module.exports = app => {
     res.send(carOfTheWeek);
   });
   app.get('/api/make/model/:id', (req, res) => {
-    const modelId = req.params.id;
-    //const model = _.find(models, {"id" : modelId});
-    let result = models.find(function( obj ) {
-      return obj.id == modelId;
-    });
-    res.send(result);
+    res.send(_.find(models, {"id" : Number(req.params.id)}));
   });
 }
