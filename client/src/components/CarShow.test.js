@@ -10,8 +10,8 @@ import ReactSixteenAdapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new ReactSixteenAdapter() });
 describe('Car Show component testing', function() {
   it('renders welcome message', function() {
-    const wrapper = shallow(<CarShowComponent />); 
+    const wrapperCarShowComponent = shallow(<CarShowComponent />); 
     const titleMessage = <h5 className="header-message" style={{ textAlign: 'center' }}>Selected Car</h5>;
-    expect(wrapper.contains(titleMessage)).to.equal(true);
+    expect(wrapperCarShowComponent.contains(titleMessage)).to.equal(true);
   });
 });

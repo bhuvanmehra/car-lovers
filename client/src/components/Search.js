@@ -30,7 +30,7 @@ class Search extends Component {
 
       if (prop === "selectedMake") {
         this.setState({
-          selectedModel: "0"
+          selectedModel: ''
         });
       }
     };
@@ -67,7 +67,7 @@ class Search extends Component {
           onChange={this.onChange("selectedModel")}
           optionItems={this.modelOptionItems()}
         />
-        <button disabled={selectedModel <= 0}>Search</button>
+        <button disabled={selectedModel === ''}>Search</button>
       </form>        
     );
   }

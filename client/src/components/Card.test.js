@@ -26,8 +26,8 @@ describe('Card component testing', function() {
 
 describe('Card component testing', function() {
   it('renders model name', function() {
-    const wrapper = shallow(<Card carModel={carModel}/>); 
+    const wrapperCard = shallow(<Card carModel={carModel}/>); 
     const modelName = <div className="model" style={{fontSize: '1.25em', fontWeight: 'bold'}}>Model - MX-5</div>;
-    expect(wrapper.contains(modelName)).to.equal(true);
+    expect(wrapperCard.contains(modelName)).to.equal(true);
   });
 });
